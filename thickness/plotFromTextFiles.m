@@ -32,10 +32,13 @@ sub1_sporring = s.f;
 % plot subsample 1
 figure;
 x = 1:20;
-plot(x,sub1_our_x,x,sub1_our_y,x,sub1_sporring,x,afm,'LineWidth',2.5);
-legend('gpX','gpY','intrapolation','AFM')
-ylabel('Thickness estimate (nm)')
-xlabel('section ID')
+% plot(x,sub1_our_x,x,sub1_our_y,x,sub1_sporring,x,afm,'LineWidth',2.5);
+plot(x,sub1_our_y,'-+',x,sub1_sporring,'-o',x,afm,':','LineWidth',2.5);
+axis([1 20 30 110])
+legend('GP','XY-avg','AFM','FontSize',14)
+ylabel('Thickness estimate (nm)','FontSize',14)
+xlabel('section ID','FontSize',14)
+
 
 %% subsample2
 % our x
@@ -51,10 +54,11 @@ sub2_sporring = s.f;
 % plot subsample 1
 figure;
 x = 1:20;
-plot(x,sub2_our_x,x,sub2_our_y,x,sub2_sporring,x,afm,'LineWidth',2.5);
-legend('gpX','gpY','intrapolation','AFM')
-ylabel('Thickness estimate (nm)')
-xlabel('section ID')
+% plot(x,sub2_our_x,x,sub2_our_y,x,sub2_sporring,x,afm,'LineWidth',2.5);
+plot(x,sub2_our_y,x,sub2_sporring,x,afm,'LineWidth',2.5);
+legend('GP','XY-avg','AFM','FontSize',18)
+ylabel('Thickness estimate (nm)','FontSize',20)
+xlabel('section ID','FontSize',20)
 
 %% subsample3
 % our x
@@ -76,12 +80,18 @@ ylabel('Thickness estimate (nm)')
 xlabel('section ID')
 %% Stats
 avg_afm = mean(afm)
+std_afm = std(afm)
+
 avg_sub1_gpy = mean(sub1_our_y)
+std_sub1_gpy = std(sub1_our_y)
+
 avg_sub1_sporring = mean(sub1_sporring)
-avg_sub2_gpy = mean(sub2_our_y)
-avg_sub2_sporring = mean(sub2_sporring)
-avg_sub3_gpy = mean(sub3_our_y)
-avg_sub3_sporring = mean(sub3_sporring)
+std_sub1_sporring = std(sub1_sporring)
+
+% avg_sub2_gpy = mean(sub2_our_y)
+% avg_sub2_sporring = mean(sub2_sporring)
+% avg_sub3_gpy = mean(sub3_our_y)
+% avg_sub3_sporring = mean(sub3_sporring)
 
 avg_gp = mean([avg_sub1_gpy,avg_sub2_gpy,avg_sub3_gpy])
 avg_sporring = mean([avg_sub1_sporring,avg_sub2_sporring,avg_sub3_sporring])
