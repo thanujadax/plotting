@@ -24,8 +24,26 @@ hold off
 
 %% plot mean compression for each rotation
 figure;
-plot(compressionVectMean,'LineWidth',2.5)
-% xticks([0:10:180]);
-% set(gca,'xtick','0','10','20','30','40','50','60','70','80','90','100','110',...
-%    '120','130','140','150','160','170','180')
-set(gca,'xticklabel',0:10:180)
+x = 0:10:180;
+plot(x,compressionVectMean,'LineWidth',2.5)
+fill()
+ylabel('\gamma_{yx}')
+xlabel('Rotation of the stack (degrees)')
+% ax = gca;
+% xticklabels = get(ax,'XTickLabel');
+% 
+% xticklabels{1} = '0';
+% xticklabels{2} = '45';
+% xticklabels{3} = '90';
+% xticklabels{4} = '135';
+% xticklabels{5} = '180';
+% set(ax,'XTickLabel',xticklabels) % set tick labels to updated values
+
+% function H=shadedErrorBar(x,y,errBar,lineProps,transparent)
+figure;
+shadedErrorBar(x,compressionVectMean,compressionVectSd,...
+    {'-b','LineWidth',2.5},0.5);
+ylabel('\gamma_{yx}')
+xlabel('Rotation of the stack (degrees)')
+
+
