@@ -1,7 +1,7 @@
 function plotAllCompressionProfilesInDir()
 
-compressionTxtFilePath = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20_2/orientationsTest/001_sig_2/compressionEstimates';
-
+% compressionTxtFilePath = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20_2/orientationsTest/001_sig_2/compressionEstimates';
+compressionTxtFilePath = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/2204/2500x_sig_2/compressionEstimates';
 fileList = dir(fullfile(compressionTxtFilePath,'*.txt'));
 
 % from each file, read the list of compression estimates and plot in the
@@ -19,6 +19,7 @@ for i=1:length(fileList)
     compressionVectMean(i) = mean(comEst);
     compressionVectSd(i) = std(comEst);
 end
+fclose(fid);
 hold off
 
 
@@ -26,7 +27,6 @@ hold off
 figure;
 x = 0:10:180;
 plot(x,compressionVectMean,'LineWidth',2.5)
-fill()
 ylabel('\gamma_{yx}')
 xlabel('Rotation of the stack (degrees)')
 % ax = gca;
@@ -42,7 +42,7 @@ xlabel('Rotation of the stack (degrees)')
 % function H=shadedErrorBar(x,y,errBar,lineProps,transparent)
 figure;
 shadedErrorBar(x,compressionVectMean,compressionVectSd,...
-    {'-b','LineWidth',2.5},0.5);
+    {'-b','LineWidth',2.5},0.5,'','','');
 ylabel('\gamma_{yx}')
 xlabel('Rotation of the stack (degrees)')
 
