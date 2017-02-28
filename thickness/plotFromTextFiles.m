@@ -3,15 +3,21 @@ function plotFromTextFiles()
 file_afm = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/afm_1_20.txt';
 
 file_our_r1_c1_x = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r1_c1_0_20/001_sig_2/thicknessPredictions/SDI/r1_c1_0_20_aligned/1/Prediction_r1_c1_0_20_aligned_wErrBar.dat';
+file_our_r1_c1_x_SD = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r1_c1_0_20/001_sig_2/thicknessPredictions/SDI/r1_c1_0_20_aligned/1/Prediction_r1_c1_0_20_aligned_wErrBar_SD.dat';
 file_our_r1_c1_y = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r1_c1_0_20/001_sig_2/thicknessPredictions/SDI/r1_c1_0_20_aligned/2/Prediction_r1_c1_0_20_aligned_wErrBar.dat';
+file_our_r1_c1_y_SD = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r1_c1_0_20/001_sig_2/thicknessPredictions/SDI/r1_c1_0_20_aligned/2/Prediction_r1_c1_0_20_aligned_wErrBar_SD.dat';
 file_sporring_r1_c1 = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r1_c1_0_20/sporring.mat';
 
 file_our_r2_c1_x = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20/001_sig_2/thicknessPredictions/SDI/r2_c1_0_20_aligned/1/Prediction_r2_c1_0_20_aligned_wErrBar.dat';
+file_our_r2_c1_x_SD = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20/001_sig_2/thicknessPredictions/SDI/r2_c1_0_20_aligned/1/Prediction_r2_c1_0_20_aligned_wErrBar_SD.dat';
 file_our_r2_c1_y = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20/001_sig_2/thicknessPredictions/SDI/r2_c1_0_20_aligned/2/Prediction_r2_c1_0_20_aligned_wErrBar.dat';
+file_our_r2_c1_y_SD = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20/001_sig_2/thicknessPredictions/SDI/r2_c1_0_20_aligned/2/Prediction_r2_c1_0_20_aligned_wErrBar_SD.dat';
 file_sporring_r2_c1 = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20/sporring.mat';
 
 file_our_r2_c1_2_x = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20_2/001_sig_2/thicknessPredictions/SDI/r2_c1_0_20_aligned_2/1/Prediction_r2_c1_0_20_aligned_2_wErrBar.dat';
+file_our_r2_c1_2_x_SD = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20_2/001_sig_2/thicknessPredictions/SDI/r2_c1_0_20_aligned_2/1/Prediction_r2_c1_0_20_aligned_2_wErrBar_SD.dat';
 file_our_r2_c1_2_y = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20_2/001_sig_2/thicknessPredictions/SDI/r2_c1_0_20_aligned_2/2/Prediction_r2_c1_0_20_aligned_2_wErrBar.dat';
+file_our_r2_c1_2_y_SD = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20_2/001_sig_2/thicknessPredictions/SDI/r2_c1_0_20_aligned_2/2/Prediction_r2_c1_0_20_aligned_2_wErrBar_SD.dat';
 file_sporring_r2_c1_2 = '/home/thanuja/RESULTS/sectionThickness/ssSEM_70nm/r2_c1_0_20_2/sporring.mat';
 
 % AFM measurements
@@ -22,9 +28,15 @@ afm = fscanf(fid,'%f\n');
 % our x 
 fid = fopen(file_our_r1_c1_x,'r');
 sub1_our_x = fscanf(fid,'%f ');
+% our x SD
+fid = fopen(file_our_r1_c1_x_SD,'r');
+sub1_our_x_SD = fscanf(fid,'%f ');
 % our y
 fid = fopen(file_our_r1_c1_y,'r');
 sub1_our_y = fscanf(fid,'%f ');
+% our y SD
+fid = fopen(file_our_r1_c1_y_SD,'r');
+sub1_our_y_SD = fscanf(fid,'%f ');
 % sporring
 s = load(file_sporring_r1_c1);
 sub1_sporring = s.f;
