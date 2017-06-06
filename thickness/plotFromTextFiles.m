@@ -47,9 +47,11 @@ x = 1:20;
 % plot(x,sub1_our_x,x,sub1_our_y,x,sub1_sporring,x,afm,'LineWidth',2.5);
 plot(x,sub1_our_y,'-+',x,sub1_sporring,'-o',x,afm,':','LineWidth',2.5);
 axis([1 20 30 110])
-legend('Ours','Sporring','AFM','FontSize',14)
+legend('Ours','Sporring','AFM')
 ylabel('Thickness estimate (nm)','FontSize',14)
 xlabel('section ID','FontSize',14)
+
+set(gca,'FontSize',14);
 
 disp('subsample 1')
 disp('RMS error sporring')
@@ -77,9 +79,11 @@ figure;
 x = 1:20;
 % plot(x,sub2_our_x,x,sub2_our_y,x,sub2_sporring,x,afm,'LineWidth',2.5);
 plot(x,sub2_our_y,'-+',x,sub2_sporring,'-o',x,afm,':','LineWidth',2.5);
-legend('Ours','Sporring','AFM','FontSize',14)
+legend('Ours','Sporring','AFM')
 ylabel('Thickness estimate (nm)','FontSize',14)
 xlabel('section ID','FontSize',14)
+
+set(gca,'FontSize',14);
 
 disp('subsample 2')
 disp('RMS error sporring')
@@ -105,9 +109,11 @@ sub3_sporring = s.f;
 figure;
 x = 1:20;
 plot(x,sub3_our_y,'-+',x,sub3_sporring,'-o',x,afm,':','LineWidth',2.5);
-legend('Ours','Sporring','AFM','FontSize',14)
+legend('Ours','Sporring','AFM')
 ylabel('Thickness estimate (nm)','FontSize',14)
 xlabel('section ID','FontSize',14)
+
+set(gca,'FontSize',14);
 
 disp('subsample 3')
 disp('RMS error sporring')
